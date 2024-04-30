@@ -16,9 +16,9 @@ def binario():
     numDec = int(input("digite um numero: "))
     binario = ""
     while numDec > 0:
-        divisaoResto = numDec % 2
-        binario = str(divisaoResto) + binario
-        numDec //= 2
+        divisaoResto = numDec % 2 #divide por 2 e armazena o resto da divisão
+        binario = str(divisaoResto) + binario #armazena e adiciona o resto das divisões
+        numDec //= 2 #divide por 2 e volta pra condição while
 
     if binario == "":
         binario = "0"
@@ -50,25 +50,21 @@ def converter():
             break
         else:
             print("Comando Inválido!\n")
-
-
 def dadosProjeto():
-    print("foi")
+    print("aluno: luizinho\n(pula linha")
 
 def main():
     print("Seja bem vindo. Escolha uma das opções abaixo:")
-    resp=(input("1 - Converter\n2 - Dados do projeto\n3 - Sair\n"))
-    if resp == "1":
-        converter()
-    if resp == "2":
-        dadosProjeto()
-    if resp == "3":
-        print("saiu")
-    else:
-        print("Comando Inválido!")
-        main()
-
-
-
-
+    while True:
+        resp=(input("1 - Converter\n2 - Dados do projeto\n3 - Sair\n"))
+        if resp == "1":
+            converter()
+        elif resp == "2":
+            dadosProjeto()
+        elif resp == "3":
+            print("Fim de programa!")
+            break
+        else:
+            print("Comando Inválido!")
+            main()
 main()
